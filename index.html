@@ -1,0 +1,85 @@
+<!--
+PROYECTO: Naruto Gestor de Tareas
+DESCRIPCIÓN: Gestor de misiones con DOM dinámico, validaciones y 
+almacenamiento local
+AUTOR: Felipe Guzmán
+-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+
+        <!-- ========================================= -->
+        <!-- SECCIÓN IZQUIERDA: FORMULARIO Y FILTROS  -->
+        <!-- Contiene creación de misiones + panel   -->
+        <!-- ========================================= -->
+        <div class="sidebar">
+
+            <header class="header">
+                <h1>🍥 Gestor de tareas</h1>
+                <p>Gestiona tus misiones ninja</p>
+            </header>
+
+            <!-- FORMULARIO: CREAR NUEVA MISIÓN -->
+            <div class="card">
+                <h2>➕ Nueva Misión</h2>
+
+                <input type="text" id="titulo" placeholder="Nombre de la misión">
+
+                <select id="prioridad">
+                    <option value="">Selecciona prioridad</option>
+                    <option value="S">🔥 Misión de rango S (Alta)</option>
+                    <option value="A">⚡ Misión de rango A (Media)</option>
+                    <option value="B">🌿 Misión de rango B (Baja)</option>
+                </select>
+
+                <input type="date" id="fecha">
+
+                <button id="btnAgregar">Agregar Misión</button>
+            </div>
+
+            <!-- PANEL DE CONTROL: FILTRO + CONTADOR -->
+            <div class="card">
+                <h2>📊 Panel Ninja</h2>
+
+                <select id="filtro">
+                    <option value="todas">Todas</option>
+                    <option value="S">🔥 Rango S</option>
+                    <option value="A">⚡ Rango A</option>
+                    <option value="B">🌿 Rango B</option>
+                </select>
+
+                <p id="contador">Total misiones: 0</p>
+            </div>
+
+        </div>
+
+        <!-- ========================================= -->
+        <!-- SECCIÓN DERECHA: LISTADO DINÁMICO        -->
+        <!-- Renderiza misiones desde JavaScript      -->
+        <!-- ========================================= -->
+        <div class="main">
+            <div class="card">
+                <h2>📋 Misiones</h2>
+                <!-- CONTENEDOR DINÁMICO: render() inserta tareas desde el array -->
+                <div id="lista"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
