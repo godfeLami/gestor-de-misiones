@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return false;
         }
 
-        // VALIDAR QUE NO SEA PASADA
+        // ⚠️ Validación de fecha mejorada con apoyo de IA (ChatGPT)
+        // Se asegura que el usuario no pueda ingresar fechas pasadas
         const hoy = new Date().toISOString().split("T")[0];
 
         if (fecha < hoy) {
